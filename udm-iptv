@@ -20,7 +20,7 @@ udm_iptv_configure()
 udm_iptv_upgrade()
 {
     echo "Running udm-iptv installer..."
-    sh -c "$(curl https://raw.githubusercontent.com/fabianishere/udm-iptv/master/install.sh -sSf)"
+    sh -c "$(curl https://raw.githubusercontent.com/verdefred/udm-iptv/master/install.sh -sSf)"
 }
 
 # Remove the udm-iptv installation from the system
