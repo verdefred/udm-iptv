@@ -1,3 +1,9 @@
+udm-iptv (3.0.6) stable; urgency=medium
+
+  * Support for UDR7 in configuration
+
+ -- Erik Post <erik.post@eml.cc>  Sun, 23 Mar 2025 12:00:00 +0000
+
 udm-iptv (3.0.5) stable; urgency=medium
 
   * Support for UCG Ultra in configuration
