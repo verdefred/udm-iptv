@@ -18,14 +18,15 @@ if command -v unifi-os > /dev/null 2>&1; then
     exit 1
 fi
 
-UDM_IPTV_VERSION=1.0.1
+RELEASE_VERSION=1.0.1
+UDM_IPTV_VERSION=3.0.5
 
 dest=$(mktemp -d)
 
 echo "Downloading packages..."
 
 # Download udm-iptv package
-curl -sS -o "$dest/udm-iptv.deb" -L "https://github.com/verdefred/udm-iptv/releases/download/v$UDM_IPTV_VERSION/udm-iptv_${UDM_IPTV_VERSION}_all.deb"
+curl -sS -o "$dest/udm-iptv.deb" -L "https://github.com/verdefred/udm-iptv/releases/download/v$RELEASE_VERSION/udm-iptv_${UDM_IPTV_VERSION}_all.deb"
 
 # Fix permissions on the packages
 chown _apt:root "$dest/udm-iptv.deb"
@@ -35,11 +36,17 @@ echo "Installing packages..."
 # Update APT sources (best effort)
 apt-get update 2>&1 1>/dev/null || true
 
+echo "Updated packages"
+
 # Install dialog package for interactive install
 apt-get install -q -y dialog 2>&1 1>/dev/null || echo "Failed to install dialog... Using readline frontend"
 
+echo "Installed dialog package"
+
 # Install udm-iptv
 apt-get install -o Acquire::AllowUnsizedPackages=1 -q "$dest/udm-iptv.deb"
+
+echo "Installed udm-iptv package"
 
 # Delete downloaded packages
 rm -rf "$dest"
