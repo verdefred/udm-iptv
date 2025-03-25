@@ -8,9 +8,9 @@
 # the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
 
-db_get udm-iptv/wan-port "eth4"
+db_get udm-iptv/wan-port "eth3"
 db_set udm-iptv/wan-interface "$RET"
-db_set udm-iptv/lan-interfaces "br0"
+db_set udm-iptv/lan-interfaces "br3"
 db_set udm-iptv/wan-vlan 105
 db_set udm-iptv/wan-ranges "10.20.0.0/16"
 db_set udm-iptv/wan-dhcp false

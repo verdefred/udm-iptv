@@ -136,8 +136,11 @@ while true; do
                 db_subst udm-iptv/wan-port choices_c "eth0, eth2"
                 db_input high udm-iptv/wan-port || true
                 ;;
-            UDM|UDR|UDR7)
+            UDM|UDR)
                 db_set udm-iptv/wan-port eth4
+                ;;
+            UDR7)
+                db_set udm-iptv/wan-port eth3
                 ;;
             UXG)
                 db_set udm-iptv/wan-port eth1
